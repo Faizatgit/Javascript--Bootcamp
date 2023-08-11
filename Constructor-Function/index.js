@@ -1,28 +1,16 @@
-function Person(name,age)
-{
-    this.name = name;
-    this.age = age;
+const itemInp = document.getElementById('item-inp');
+const qtyInp = document.getElementById('qty-inp');
+const list = document.getElementById('list');
+const addBtn = document.getElementById('add-btn');
 
-    // this.getNAme = function()
-    // {
-    //     console.log(`${this.name}`);
-    // }
-}
+addBtn.addEventListener('click',function(){
+    const item = itemInp.value;
+    const qty = qtyInp.value;
 
+    const li = document.createElement('li');
+    li.innerHTML = `${item}------${qty}`;
+    list.appendChild(li);
 
-// Changing prototype directly is not a good practice
-
-Person.prototype.getNAme = function()
-{
-    console.log(`${this.name}`);
-}
-
-const P1 = new Person("Faizan",22);
-
-//  In a constructor function this does not have a value. It is a substitute for the new object. 
-//  The value of this will become the new object when a new object is created.
-
-
-//  It is considered good practice to name constructor functions with an upper-case first letter.
-
-
+    item = "";
+    qty = "";
+})
